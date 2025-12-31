@@ -1,0 +1,350 @@
+/* 
+   ==========================================================================
+   School Management - Ultra-Readable Midnight Blue Theme
+   Garantit une lisibilité maximale (Contraste AA/AAA)
+   ========================================================================== 
+*/
+
+:root {
+    /* Backgrounds */
+    --bg-main: #0f172a;
+    /* Bleu nuit profond */
+    --bg-card: #1e293b;
+    /* Bleu ardoise */
+    --bg-input: #020617;
+    /* Noir bleuté pour les champs */
+    --bg-stripe: rgba(255, 255, 255, 0.05);
+
+    /* Text Colors (Priorité Lisibilité) */
+    --text-white: #ffffff;
+    /* Texte pur pour titres */
+    --text-normal: #f1f5f9;
+    /* Texte principal (très clair) */
+    --text-muted: #cbd5e1;
+    /* Labels et textes secondaires (gris clair) */
+    --text-placeholder: #64748b;
+
+    /* Accents & UI */
+    --primary: #3b82f6;
+    /* Bleu vif */
+    --primary-hover: #60a5fa;
+    --border: rgba(255, 255, 255, 0.15);
+    --focus-ring: rgba(59, 130, 246, 0.5);
+
+    /* Status */
+    --error: #f87171;
+    /* Rouge clair */
+    --success: #4ade80;
+    /* Vert clair */
+    --info: #38bdf8;
+    --disabled: #475569;
+}
+
+/* 1. Global Reset & Body */
+body {
+    background: radial-gradient(circle at top right, var(--bg-card), var(--bg-main)) no-repeat fixed;
+    color: var(--text-normal) !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+/* 2. Headlines & Titles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: var(--text-white) !important;
+    font-weight: 700;
+}
+
+.page-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* 3. Formulaires */
+label,
+.form-label {
+    color: var(--text-muted) !important;
+    font-weight: 600 !important;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+    background-color: var(--bg-input) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-white) !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--bg-input) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 4px var(--focus-ring) !important;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: var(--text-placeholder) !important;
+}
+
+select option {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+}
+
+.form-check-input {
+    background-color: var(--bg-input) !important;
+    border: 1px solid var(--border) !important;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.form-check-label {
+    color: var(--text-normal) !important;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* 4. Tables Bootstrap */
+.table-wrapper {
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.table {
+    color: var(--text-normal) !important;
+    margin-bottom: 0 !important;
+}
+
+.table thead th {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: var(--primary) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--bg-stripe) !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+    color: var(--text-white) !important;
+}
+
+/* 5. Cards */
+.card {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-title {
+    color: var(--text-white) !important;
+}
+
+.card-text {
+    color: var(--text-muted) !important;
+}
+
+/* 6. Boutons et Liens */
+.btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover) !important;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--disabled) !important;
+    border: none;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* 7. Validation et Alertes */
+.text-danger {
+    color: var(--error) !important;
+    font-weight: 500;
+}
+
+.alert {
+    border: none !important;
+    border-radius: 8px;
+}
+
+.alert-danger {
+    background-color: rgba(248, 113, 113, 0.15) !important;
+    color: var(--error) !important;
+}
+
+/* 8. Utility Classes */
+.card-action {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.badge {
+    padding: 0.5em 1em;
+    border-radius: 6px;
+}
+
+.label-detail {
+    color: var(--text-muted) !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* 9. Hero & Banner Styling */
+.hero {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 4rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.hero-banner {
+    background-image:
+        linear-gradient(90deg, var(--bg-main) 30%, rgba(15, 23, 42, 0.85) 50%, rgba(15, 23, 42, 0.3) 100%),
+        url("/images/acc.png") !important;
+    background-size: cover !important;
+    background-position: center right !important;
+    background-repeat: no-repeat !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-left {
+    flex: 0 0 auto;
+    z-index: 2;
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    flex: 1 1 auto;
+    z-index: 2;
+}
+
+.hero-logo {
+    height: 180px;
+    width: auto;
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-logo:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.hero-tagline {
+    font-size: 1.1rem;
+    color: var(--info);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 1rem;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 2rem;
+        min-height: auto;
+    }
+
+    .hero-banner {
+        background-image:
+            linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.7) 100%),
+            url("/images/acc.png") !important;
+        background-position: center;
+    }
+
+    .hero-right {
+        align-items: center;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .hero-logo {
+        height: 140px;
+    }
+}
+
+:disabled,
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+    background-color: var(--bg-input) !important;
+    color: var(--disabled) !important;
+}
